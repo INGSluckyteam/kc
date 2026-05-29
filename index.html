@@ -1,7 +1,523 @@
-function openPdf() {
-  var a = atob('QUtJRDZBMWQ3VnJVOGd3MXRZekthcHkyMnNiN1JaVVFBZnV0');
-  var b = atob('aHR0cHM6Ly93b3JrYnVkZHktYmdhLTEyNTgzNDQ2OTkuY29zLmFwLWJlaWppbmcubXlxY2xvdWQuY29tL2F0dGFjaG1lbnRzL2Q2NDdiMjQ2LWNiMmQtNDIxMS1hZThhLTc4Y2E0YTc3MmU4NC8xNzgwMDc0MTk0XzEzN2M0NzQyLyVFNSU4NSVCQiVFOSU5QiU4QyVFNCVCOCVCOCVFNiU4OSU4QiVFNSU4NiU4QzEucGRmP3Etc2lnbi1hbGdvcml0aG09c2hhMSZxLWFrPQ==');
-  var c = atob('JnEtc2lnbi10aW1lPTE3ODAwNzQxOTUlM0ExNzg3ODUwMTk1JnEta2V5LXRpbWU9MTc4MDA3NDE5NSUzQTE3ODc4NTAxOTUmcS1oZWFkZXItbGlzdD1ob3N0JnEtdXJsLXBhcmFtLWxpc3Q9JnEtc2lnbmF0dXJlPTY5OWJhM2VlYjYxNWQ3OTY2MTUyMzhiY2EzYmU2MjdmNGFmNjFmZTI=');
-  window.open(b + a + c);}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>英树×臻研志 | LUCKY TEAM 经销商培训课程</title>
+<style>
+  :root {
+    --gold: #c9a96e;
+    --gold-dark: #a88a4a;
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #c9a96e 50%, #a88a4a 100%);
+    --dark: #1a1a2e;
+    --ys-gradient: linear-gradient(135deg, #2d6a4a 0%, #40916c 100%);
+    --lt-gradient: linear-gradient(135deg, #2b6cb0 0%, #63b3ed 100%);
+    --bg: #f8f6f1;
+    --text: #2d3436;
+    --text2: #636e72;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 6px 24px rgba(0,0,0,0.1);
+    --r: 14px;
+    --r-sm: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; }
 
+  .screen { display: none; animation: fadeIn 0.25s ease; padding-bottom: 24px; }
+  .screen.active { display: block; }
+  @keyframes fadeIn { from {opacity:0} to {opacity:1} }
 
+  .page-hd {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    padding: 10px 16px; display: flex;
+    align-items: center; gap: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .page-hd .back {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: #f0f0f0; border: none; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; color: #555;
+  }
+  .page-hd .back:active { transform: scale(0.92); }
+  .page-hd .title { font-size: 16px; font-weight: 700; }
+
+  .sec-tt {
+    display: flex; align-items: center; gap: 8px;
+    margin: 20px 16px 12px;
+  }
+  .sec-tt .line { width: 3px; height: 16px; border-radius: 2px; background: var(--gold-gradient); }
+  .sec-tt h3 { font-size: 15px; font-weight: 700; }
+
+  /* Hero */
+  .hero {
+    margin: 10px 16px 0;
+    height: 140px;
+    border-radius: var(--r);
+    background: linear-gradient(160deg, #1a1a2e 0%, #2d2d4a 100%);
+    color: #fff;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(26,26,46,0.35);
+    border: 1px solid rgba(201,169,110,0.15);
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    top: -40px; right: -50px; width: 150px; height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+  }
+  .hero::after {
+    content: ''; position: absolute;
+    bottom: -30px; left: -40px; width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+  }
+  .hero .h-badge {
+    font-size: 11px; letter-spacing: 3px;
+    opacity: 0.7; margin-bottom: 6px;
+    position: relative;
+  }
+  .hero .h-title {
+    font-size: 26px; font-weight: 700;
+    letter-spacing: 2px; position: relative;
+  }
+  .hero .h-title .ys { color: #5cb885; }
+  .hero .h-title .zy { color: #b98fd4; }
+  .hero .h-line {
+    width: 40px; height: 2px; background: var(--gold);
+    border-radius: 1px; margin: 10px 0; position: relative;
+    opacity: 0.6;
+  }
+  .hero .h-sub {
+    font-size: 13px; opacity: 0.8;
+    letter-spacing: 2px; position: relative;
+  }
+
+  /* IMA Card */
+  .ima-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%);
+    border-radius: var(--r);
+    margin: 12px 16px;
+    padding: 16px 18px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: pointer; transition: transform 0.15s;
+    border: 1px solid rgba(201,169,110,0.15);
+  }
+  .ima-card:active { transform: scale(0.98); }
+  .ima-card .ima-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: var(--gold-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .ima-card .ima-info { flex: 1; color: #fff; }
+  .ima-card .ima-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .ima-card .ima-desc { font-size: 12px; color: rgba(255,255,255,0.45); }
+  .ima-card .ima-arrow { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+
+  /* Cat Grid */
+  .cat-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin: 0 16px;
+  }
+  .cat-btn {
+    background: linear-gradient(135deg, #f5f0e6 0%, #ebe5d8 100%);
+    border-radius: var(--r-sm);
+    padding: 14px 12px;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    border: 1px solid rgba(201,169,110,0.12);
+    text-decoration: none; color: inherit;
+  }
+  .cat-btn:active { transform: scale(0.97); box-shadow: var(--shadow-lg); }
+  .cat-btn .cat-name { font-size: 14px; font-weight: 600; letter-spacing: 2px; flex: 1; }
+  .cat-btn .cat-badge {
+    font-size: 10px; background: #e0e0e0; color: #999;
+    padding: 2px 8px; border-radius: 6px; flex-shrink: 0;
+  }
+
+  /* Course Card */
+  .course-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin: 0 16px 20px;
+  }
+  .course-card {
+    border-radius: var(--r-sm); overflow: hidden;
+    background: var(--dark); box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; aspect-ratio: 4/3.2;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: #fff;
+  }
+  .course-card:active { transform: scale(0.97); }
+  .course-card .cc-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, #2a1a3a 0%, #1a1a2e 60%, #16213e 100%);
+  }
+  .course-card .cc-shine {
+    position: absolute; top: -20px; right: -20px;
+    width: 80px; height: 80px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
+  }
+  .course-card .cc-dust {
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .course-card .cc-tag {
+    position: relative; z-index: 2;
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(201,169,110,0.15) 100%);
+    color: var(--gold); font-size: 10px;
+    padding: 3px 10px; border-radius: 4px;
+    margin: 10px 10px 0; align-self: flex-start;
+    border: 1px solid rgba(212,175,55,0.15);
+    font-weight: 600; letter-spacing: 1px;
+  }
+  .course-card .cc-new {
+    background: #ff4757; color: #fff; border: none;
+    position: absolute; top: 10px; right: 10px; z-index: 3;
+    font-size: 10px; padding: 2px 8px;
+    border-radius: 4px; font-weight: 600;
+  }
+  .course-card .cc-title {
+    position: relative; z-index: 2;
+    padding: 8px 10px 4px;
+    font-size: 14px; font-weight: 600; line-height: 1.4;
+  }
+  .course-card .cc-sub {
+    position: relative; z-index: 2;
+    padding: 0 10px 10px;
+    font-size: 10px; color: rgba(255,255,255,0.5);
+  }
+  .course-card .cc-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 8px 10px;
+    font-size: 9px; color: rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* Detail */
+  .detail-hero {
+    margin: 0 0 16px; height: 130px;
+    border-radius: 0 0 var(--r) var(--r);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .detail-hero.dh-lt { background: var(--lt-gradient); }
+  .detail-hero .dh-tag { font-size: 11px; opacity: 0.7; letter-spacing: 2px; margin-bottom: 6px; }
+  .detail-hero .dh-tt { font-size: 22px; font-weight: 700; }
+  .detail-hero .dh-desc { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+
+  .lesson-list { display: flex; flex-direction: column; gap: 8px; margin: 0 16px 24px; }
+  .lesson-item {
+    background: #fff; border-radius: var(--r-sm);
+    padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+    box-shadow: var(--shadow); cursor: pointer; transition: all 0.15s;
+    text-decoration: none; color: inherit;
+  }
+  .lesson-item:active { transform: scale(0.98); box-shadow: var(--shadow-lg); }
+  .lesson-item .l-num {
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+    background: var(--lt-gradient);
+  }
+  .lesson-item .l-info { flex: 1; min-width: 0; }
+  .lesson-item .l-name { font-size: 14px; font-weight: 600; }
+  .lesson-item .l-dur { font-size: 12px; color: var(--text2); }
+
+  /* IMA Bar */
+  .ima-bar {
+    background: linear-gradient(135deg, #faf8f2 0%, #f0e6cc 100%);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: var(--r); margin: 0 16px 16px;
+    padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: transform 0.15s;
+  }
+  .ima-bar:active { transform: scale(0.98); }
+  .ima-bar .ib-icon { font-size: 22px; flex-shrink: 0; }
+  .ima-bar .ib-text { flex: 1; font-size: 13px; color: #8b7355; }
+  .ima-bar .ib-btn {
+    background: var(--gold-gradient); color: #fff; border: none;
+    padding: 8px 14px; border-radius: 16px;
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+  }
+
+  /* Video Cards */
+  .video-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin: 0 16px;
+  }
+  .video-card {
+    border-radius: var(--r-sm); overflow: hidden;
+    background: #1a1a2e; box-shadow: var(--shadow);
+    cursor: pointer; position: relative;
+    aspect-ratio: 16/12; display: flex; flex-direction: column;
+    text-decoration: none; color: #fff;
+  }
+  .video-card:active { transform: scale(0.97); }
+  .video-card .vc-img {
+    flex: 1; position: relative;
+    background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-card .vc-play {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .video-card .vc-title {
+    padding: 8px 10px; font-size: 12px; font-weight: 600;
+    background: rgba(26,26,46,0.9);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* PDF Card */
+  .pdf-card {
+    margin: 0 16px 16px;
+    border-radius: var(--r);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    cursor: pointer;
+    position: relative;
+    background: var(--dark);
+  }
+  .pdf-card:active { transform: scale(0.98); }
+  .pdf-card .pdf-badge {
+    position: absolute; top: 10px; left: 12px; z-index: 3;
+    background: #ff4757; color: #fff; font-size: 10px;
+    font-weight: 700; padding: 3px 10px; border-radius: 10px;
+  }
+  .pdf-card .pdf-img { width: 100%; display: block; }
+  .pdf-card .pdf-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff; font-size: 13px; font-weight: 600;
+  }
+
+  .footer-line { text-align: center; font-size: 11px; color: #bbb; padding: 16px 0; }
+
+  .toast {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%,-50%) scale(0.85);
+    background: rgba(0,0,0,0.78); color: #fff;
+    padding: 12px 24px; border-radius: 24px;
+    font-size: 14px; pointer-events: none;
+    opacity: 0; transition: all 0.3s; z-index: 9999;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- 首页 -->
+<div class="screen active" id="screen-home">
+
+  <div class="hero">
+    <div class="h-badge">LUCKY TEAM</div>
+    <div class="h-title"><span class="ys">英树</span> × <span class="zy">臻研志</span></div>
+    <div class="h-line"></div>
+    <div class="h-sub">经销 商 培 训 课 程</div>
+  </div>
+
+  <!-- ima 资料库 -->
+  <div class="ima-card" onclick="copyIma()">
+    <div class="ima-icon">📚</div>
+    <div class="ima-info">
+      <div class="ima-title">ima 知识库</div>
+      <div class="ima-desc">产品手册 · PPT · 培训文档 → 点我复制链接</div>
+    </div>
+    <div class="ima-arrow">›</div>
+  </div>
+
+  <!-- 快速入口 -->
+  <div class="sec-tt">
+    <span class="line"></span>
+    <h3>快速入口</h3>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-btn" onclick="goScreen('detail-sales')">
+      <span class="cat-name">💬 销售技巧</span>
+    </div>
+    <div class="cat-btn" onclick="showToast('🚧 课程开发中，敬请期待')">
+      <span class="cat-name">🌿 英树产品</span>
+      <span class="cat-badge">开发中</span>
+    </div>
+    <div class="cat-btn" onclick="showToast('🚧 课程开发中，敬请期待')">
+      <span class="cat-name">💜 臻研志</span>
+      <span class="cat-badge">开发中</span>
+    </div>
+    <div class="cat-btn" onclick="showToast('🚧 课程开发中，敬请期待')">
+      <span class="cat-name">📱 朋友圈</span>
+      <span class="cat-badge">开发中</span>
+    </div>
+    <div class="cat-btn" onclick="showToast('🚧 课程开发中，敬请期待')">
+      <span class="cat-name">🎬 短视频</span>
+      <span class="cat-badge">开发中</span>
+    </div>
+    <div class="cat-btn" onclick="showToast('🚧 课程开发中，敬请期待')">
+      <span class="cat-name">🛠️ 平台使用</span>
+      <span class="cat-badge">开发中</span>
+    </div>
+  </div>
+
+  <!-- 最新课程 -->
+  <div class="sec-tt">
+    <span class="line"></span>
+    <h3>最新课程</h3>
+  </div>
+  <div class="course-grid">
+    <div class="course-card" onclick="goScreen('detail-sales')">
+      <div class="cc-bg"></div>
+      <div class="cc-shine"></div>
+      <div class="cc-dust"></div>
+      <div class="cc-new">🔥 新课</div>
+      <span class="cc-tag">销售为王</span>
+      <div class="cc-title">成交高手<br>锻造系列</div>
+      <div class="cc-sub">从沟通到成交，提升转化</div>
+      <div class="cc-bottom">💬 LUCKY TEAM | 陪你成长·助你成事</div>
+    </div>
+    <div class="course-card" onclick="showToast('🚧 课程开发中')">
+      <div class="cc-bg"></div>
+      <div class="cc-shine"></div>
+      <div class="cc-dust"></div>
+      <span class="cc-tag">私域变现</span>
+      <div class="cc-title">朋友圈打造<br>系列课</div>
+      <div class="cc-sub">即将上线</div>
+      <div class="cc-bottom">📱 LUCKY TEAM | 陪你成长·助你成事</div>
+    </div>
+  </div>
+
+  <!-- 视频课程 -->
+  <div class="sec-tt">
+    <span class="line"></span>
+    <h3>视频课程</h3>
+  </div>
+  <div class="video-grid">
+    <div class="video-card" onclick="showToast('🚧 课程开发中')">
+      <div class="vc-img"><div class="vc-play">▶</div></div>
+      <div class="vc-title">公司文化 · 品牌故事</div>
+    </div>
+    <div class="video-card" onclick="showToast('🚧 课程开发中')">
+      <div class="vc-img"><div class="vc-play">▶</div></div>
+      <div class="vc-title">产品展示 · 使用教程</div>
+    </div>
+    <div class="video-card" onclick="showToast('🚧 课程开发中')">
+      <div class="vc-img"><div class="vc-play">▶</div></div>
+      <div class="vc-title">会议合集 · 培训回放</div>
+    </div>
+    <div class="video-card" onclick="showToast('🚧 课程开发中')">
+      <div class="vc-img"><div class="vc-play">▶</div></div>
+      <div class="vc-title">拍摄剪辑 · 实操教学</div>
+    </div>
+  </div>
+
+  <!-- 联系LT总助 -->
+  <div class="ima-bar" style="margin-top:20px;" onclick="showToast('请私信我，我会一对一回复！')">
+    <span class="ib-icon">💬</span>
+    <span class="ib-text">学习中遇到问题？随时联系</span>
+    <span class="ib-btn">联系LT总助</span>
+  </div>
+
+  <div class="footer-line">🌿 英树×臻研志 LUCKY TEAM | 陪你成长·助你成事</div>
+</div>
+
+<!-- 详情页：销售技巧 -->
+<div class="screen" id="screen-detail-sales">
+  <div class="page-hd">
+    <button class="back" onclick="goHome()">‹</button>
+    <div class="title">销售技巧系列</div>
+  </div>
+  <div class="detail-hero dh-lt">
+    <div class="dh-tag">💬 通用课程</div>
+    <div class="dh-tt">销售技巧系列</div>
+    <div class="dh-desc">从沟通到成交，全面提升转化率</div>
+  </div>
+  <div class="lesson-list">
+    <a class="lesson-item" href="https://meeting.tencent.com/crm/KWL7bJn74d" target="_blank">
+      <span class="l-num">1</span>
+      <div class="l-info"><div class="l-name">客户沟通技巧</div><div class="l-dur">怎么聊才能成交</div></div>
+      <span class="l-arrow">›</span>
+    </a>
+    <a class="lesson-item" href="javascript:;" onclick="showToast('🚧 课程开发中')">
+      <span class="l-num" style="background:#bbb">2</span>
+      <div class="l-info"><div class="l-name">异议处理话术</div><div class="l-dur">常见问题应对</div></div>
+      <span style="font-size:11px;color:#bbb">开发中</span>
+    </a>
+    <a class="lesson-item" href="javascript:;" onclick="showToast('🚧 课程开发中')">
+      <span class="l-num" style="background:#bbb">3</span>
+      <div class="l-info"><div class="l-name">促成成交技巧</div><div class="l-dur">让客户主动下单</div></div>
+      <span style="font-size:11px;color:#bbb">开发中</span>
+    </a>
+    <a class="lesson-item" href="javascript:;" onclick="showToast('🚧 课程开发中')">
+      <span class="l-num" style="background:#bbb">4</span>
+      <div class="l-info"><div class="l-name">老客户维护与复购</div><div class="l-dur">持续回购的方法</div></div>
+      <span style="font-size:11px;color:#bbb">开发中</span>
+    </a>
+  </div>
+
+  <div class="ima-bar" onclick="copyIma()">
+    <span class="ib-icon">📚</span>
+    <span class="ib-text">所有资料在 ima 知识库</span>
+    <span class="ib-btn">点我复制</span>
+  </div>
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var IMA_LINK = '#小程序://ima知识库/WeChat/wQf4UuIcdqIubSf';
+
+function goScreen(id) {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('screen-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+function goHome() {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('screen-home').classList.add('active');
+  window.scrollTo(0, 0);
+}
+function copyIma() {
+  var ta = document.createElement('textarea');
+  ta.value = IMA_LINK;
+  ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try {
+    document.execCommand('copy');
+    showToast('已复制！去微信任意对话框粘贴即可打开 ima');
+  } catch(e) { showToast(IMA_LINK); }
+  document.body.removeChild(ta);
+}
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+}
+</script>
+
+</body>
+</html>
