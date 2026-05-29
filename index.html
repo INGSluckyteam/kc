@@ -312,6 +312,29 @@
     color: #fff; font-size: 13px; font-weight: 600;
   }
 
+  /* Audio Cards */
+  .audio-list { display: flex; flex-direction: column; gap: 10px; margin: 0 16px 20px; }
+  .audio-card {
+    background: #fff; border-radius: var(--r-sm);
+    padding: 14px 16px 12px;
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .audio-card .ac-title {
+    font-size: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--text);
+  }
+  .audio-card .ac-title .ac-icon { font-size: 20px; flex-shrink: 0; }
+  .audio-card audio {
+    width: 100%; height: 40px;
+    border-radius: 8px;
+  }
+  /* Override native audio styles for consistency */
+  .audio-card audio::-webkit-media-controls-panel {
+    background: #f5f0e6;
+  }
+
   .footer-line { text-align: center; font-size: 11px; color: #bbb; padding: 16px 0; }
 
   .toast {
@@ -428,6 +451,28 @@
     <div class="video-card" onclick="showToast('🚧 课程开发中')">
       <div class="vc-img"><div class="vc-play">▶</div></div>
       <div class="vc-title">拍摄剪辑 · 实操教学</div>
+    </div>
+  </div>
+
+  <!-- 音频课程 -->
+  <div class="sec-tt">
+    <span class="line"></span>
+    <h3>音频课程</h3>
+  </div>
+  <div class="audio-list">
+    <div class="audio-card">
+      <div class="ac-title"><span class="ac-icon">🎧</span>掌握集团背书，10分钟讲出公司硬实力</div>
+      <audio controls preload="none">
+        <source src="audio/01_掌握集团背书10分钟讲出公司硬实力.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+      </audio>
+    </div>
+    <div class="audio-card">
+      <div class="ac-title"><span class="ac-icon">🎧</span>价值锚定 · 精准匹配《臻研志LAB.Y无可替代的10大核心理由》</div>
+      <audio controls preload="none">
+        <source src="audio/02_价值锚定精准匹配臻研志LABY无可替代的10大核心理由.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+      </audio>
     </div>
   </div>
 
