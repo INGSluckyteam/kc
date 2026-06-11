@@ -214,13 +214,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
       <span class="cb-tag new">新课</span>
       <div class="cb-emoji">💜</div>
       <div class="cb-name">臻研志</div>
-      <div class="cb-count">2 节音频</div>
-    </a>
-    <a class="cat-btn zyz" href="javascript:go('aiskin')">
-      <span class="cb-tag new">新课</span>
-      <div class="cb-emoji">🧬</div>
-      <div class="cb-name">AI量肤定制</div>
-      <div class="cb-count">3 节直播</div>
+      <div class="cb-count">2 节音频 · 3 节直播</div>
     </a>
     <div class="cat-btn cmn disabled" onclick="showToast('🚧 课程开发中')">
       <span class="cb-tag soon">敬请期待</span>
@@ -365,12 +359,20 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
   <div class="ima-bar" style="margin-top:16px" onclick="copyIma()">
     <span class="ib-icon">📚</span><span class="ib-text">所有资料在 ima 知识库</span><span class="ib-btn">复制链接</span>
   </div>
+
+  <!-- 高级研修班子入口 -->
+  <div class="section" style="padding-top:24px"><h3>高级研修班</h3><span class="tag">Advanced</span></div>
+  <a class="course-card zyz" href="javascript:go('aiskin')" style="margin:0 16px 16px">
+    <span class="cc-tag new">NEW</span>
+    <div class="cc-ttl">臻研志AI量肤定制高级研修班</div>
+    <div class="cc-sub">3 节直播 · 用AI定制锁客，告别价格战</div>
+  </a>
 </div>
 
 <!-- ========== AI量肤定制 ========== -->
 <div class="screen" id="aiskin">
   <div class="nav">
-    <button class="back" onclick="goHome()">‹</button>
+    <button class="back" onclick="go('zyz')">‹</button>
     <div class="ttl">AI量肤定制</div>
   </div>
   <div class="detail-hero zyz">
