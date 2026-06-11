@@ -204,17 +204,17 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
 
   <div class="section"><h3>课程分类</h3><span class="tag">Courses</span></div>
   <div class="cat-grid">
-    <a class="cat-btn ys" href="javascript:go('sales')">
-      <span class="cb-tag new">新课</span>
+    <div class="cat-btn ys disabled" onclick="showToast('🚧 课程开发中')">
+      <span class="cb-tag soon">敬请期待</span>
       <div class="cb-emoji">💬</div>
       <div class="cb-name">销售技巧</div>
-      <div class="cb-count">1 节课程</div>
-    </a>
+      <div class="cb-count">即将上线</div>
+    </div>
     <a class="cat-btn zyz" href="javascript:go('zyz')">
       <span class="cb-tag new">新课</span>
       <div class="cb-emoji">💜</div>
       <div class="cb-name">臻研志</div>
-      <div class="cb-count">2 节音频 · 3 节直播</div>
+      <div class="cb-count">6 节音频 · 11 节音频 · 3 节直播</div>
     </a>
     <a class="cat-btn ys" href="javascript:go('ystrategy')">
       <span class="cb-tag new">新课</span>
@@ -244,40 +244,15 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
 
   <div class="section"><h3>最新上线</h3><span class="tag">New</span></div>
   <div class="course-list">
-    <a class="course-card zyz" href="javascript:go('zyzbasic')">
+    <a class="course-card ys" href="javascript:go('ystrategy')">
       <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">价值锚定 · 臻研志LAB.Y</div>
-      <div class="cc-sub">无可替代的10大核心理由 · 音频课</div>
-    </a>
-    <a class="course-card zyz" href="javascript:go('zyzbasic')">
-      <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">掌握集团背书</div>
-      <div class="cc-sub">10分钟讲出公司硬实力 · 音频课</div>
-    </a>
-    <a class="course-card ys" href="javascript:go('sales')">
-      <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">客户沟通技巧</div>
-      <div class="cc-sub">怎么聊才能成交 · 视频课程</div>
+      <div class="cc-ttl">英树推客体系</div>
+      <div class="cc-sub">私域事业合伙人全案 · 董强 · 音频课</div>
     </a>
     <a class="course-card zyz" href="javascript:go('aiskin')">
       <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">定制护肤大势解析</div>
-      <div class="cc-sub">6月12日 19:00 · 直播课</div>
-    </a>
-    <a class="course-card zyz" href="javascript:go('aiskin')">
-      <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">AI智能测肤实战</div>
-      <div class="cc-sub">6月15日 19:00 · 直播课</div>
-    </a>
-    <a class="course-card zyz" href="javascript:go('aiskin')">
-      <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">四大标准套组</div>
-      <div class="cc-sub">6月17日 19:00 · 直播课</div>
-    </a>
-    <a class="course-card zyz" href="javascript:go('zyzagent')">
-      <span class="cc-tag new">NEW</span>
-      <div class="cc-ttl">代理销售心得系列</div>
-      <div class="cc-sub">10 位大咖实战分享 · 音频课</div>
+      <div class="cc-ttl">臻研志AI量肤定制高级研修班</div>
+      <div class="cc-sub">3 节直播 · 用AI定制锁客，告别价格战</div>
     </a>
   </div>
 
@@ -349,12 +324,12 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
   <a class="course-card zyz" href="javascript:go('zyzbasic')" style="margin:0 16px 10px">
     <span class="cc-tag new">NEW</span>
     <div class="cc-ttl">基础课程</div>
-    <div class="cc-sub">2 节音频 · 品牌背书 · 产品价值锚定</div>
+    <div class="cc-sub">6 节音频 · 品牌背书 · 产品知识</div>
   </a>
   <a class="course-card zyz" href="javascript:go('zyzagent')" style="margin:0 16px 10px">
     <span class="cc-tag new">NEW</span>
     <div class="cc-ttl">代理销售心得</div>
-    <div class="cc-sub">10 节音频 · 实战经验 · 销售心法</div>
+    <div class="cc-sub">11 节音频 · 实战经验 · 销售心法</div>
   </a>
   <a class="course-card zyz" href="javascript:go('aiskin')" style="margin:0 16px 16px">
     <span class="cc-tag new">NEW</span>
@@ -374,7 +349,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
     <div class="dh-ttl">臻研志基础课程</div>
     <div class="dh-desc">品牌背书 · 产品价值锚定</div>
   </div>
-  <div class="section" style="padding-top:20px"><h3>全部课程</h3><span class="tag">2 Lessons</span></div>
+  <div class="section" style="padding-top:20px"><h3>全部课程</h3><span class="tag">6 Lessons</span></div>
   <div class="audio-block">
     <div class="ab-hd">
       <div class="ab-icon">🎧</div>
@@ -393,6 +368,42 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
       <source src="audio/02_价值锚定精准匹配臻研志LABY无可替代的10大核心理由.mp3" type="audio/mpeg">
     </audio>
   </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">以制药标准，重塑内服美学：TenuVita 精准营养法则 — 大新</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/15_制药标准重塑内服美学TenuVita精准营养法则-大新.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">万字拆解英树双炮抗衰黑科技 — 大新</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/16_万字拆解英树双炮抗衰黑科技-大新.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">产品革命·AI赋能：外养内调，从量肤定制到精准营养的抗衰闭环</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/17_外养内调从量肤定制到精准营养抗衰闭环.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">项目解析·模型拆解：臻研志LAB.Y国内唯一AI智能体跨境电商平台</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/18_臻研志LABY国内唯一AI智能体跨境电商平台.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
 <!-- ========== 代理销售心得 ========== -->
@@ -406,7 +417,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
     <div class="dh-ttl">代理销售心得</div>
     <div class="dh-desc">实战经验 · 销售心法 · 个人成长</div>
   </div>
-  <div class="section" style="padding-top:20px"><h3>全部课程</h3><span class="tag">10 Lessons</span></div>
+  <div class="section" style="padding-top:20px"><h3>全部课程</h3><span class="tag">11 Lessons</span></div>
   <div class="audio-block">
     <div class="ab-hd">
       <div class="ab-icon">🎧</div>
@@ -495,6 +506,15 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
     </div>
     <audio controls preload="none">
       <source src="audio/13_重启人生从爱好到事业二十万水光奇迹-吴宝月.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">事业意义的重构 — 宝怡</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/14_事业意义的重构-宝怡.mp3" type="audio/mpeg">
     </audio>
   </div>
 </div>
