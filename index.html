@@ -216,12 +216,12 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
       <div class="cb-name">臻研志</div>
       <div class="cb-count">2 节音频</div>
     </a>
-    <div class="cat-btn cmn disabled" onclick="showToast('🚧 课程开发中')">
-      <span class="cb-tag soon">敬请期待</span>
-      <div class="cb-emoji">🌿</div>
-      <div class="cb-name">英树产品</div>
-      <div class="cb-count">即将上线</div>
-    </div>
+    <a class="cat-btn zyz" href="javascript:go('aiskin')">
+      <span class="cb-tag new">新课</span>
+      <div class="cb-emoji">🧬</div>
+      <div class="cb-name">AI量肤定制</div>
+      <div class="cb-count">3 节直播</div>
+    </a>
     <div class="cat-btn cmn disabled" onclick="showToast('🚧 课程开发中')">
       <span class="cb-tag soon">敬请期待</span>
       <div class="cb-emoji">📱</div>
@@ -258,6 +258,21 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
       <span class="cc-tag live">LIVE</span>
       <div class="cc-ttl">客户沟通技巧</div>
       <div class="cc-sub">怎么聊才能成交 · 视频课程</div>
+    </a>
+    <a class="course-card zyz" href="javascript:go('aiskin')">
+      <span class="cc-tag new">NEW</span>
+      <div class="cc-ttl">定制护肤大势解析</div>
+      <div class="cc-sub">6月12日 19:00 · 直播课</div>
+    </a>
+    <a class="course-card zyz" href="javascript:go('aiskin')">
+      <span class="cc-tag new">NEW</span>
+      <div class="cc-ttl">AI智能测肤实战</div>
+      <div class="cc-sub">6月15日 19:00 · 直播课</div>
+    </a>
+    <a class="course-card zyz" href="javascript:go('aiskin')">
+      <span class="cc-tag new">NEW</span>
+      <div class="cc-ttl">四大标准套组</div>
+      <div class="cc-sub">6月17日 19:00 · 直播课</div>
     </a>
   </div>
 
@@ -346,6 +361,49 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
     <audio controls preload="none">
       <source src="audio/02_价值锚定精准匹配臻研志LABY无可替代的10大核心理由.mp3" type="audio/mpeg">
     </audio>
+  </div>
+  <div class="ima-bar" style="margin-top:16px" onclick="copyIma()">
+    <span class="ib-icon">📚</span><span class="ib-text">所有资料在 ima 知识库</span><span class="ib-btn">复制链接</span>
+  </div>
+</div>
+
+<!-- ========== AI量肤定制 ========== -->
+<div class="screen" id="aiskin">
+  <div class="nav">
+    <button class="back" onclick="goHome()">‹</button>
+    <div class="ttl">AI量肤定制</div>
+  </div>
+  <div class="detail-hero zyz">
+    <div class="dh-tag">Advanced Training</div>
+    <div class="dh-ttl">臻研志AI量肤定制<br>高级研修班</div>
+    <div class="dh-desc">用AI定制锁客，告别价格战，用专业重构你的盈利模型</div>
+  </div>
+  <div class="section" style="padding-top:20px"><h3>研修课程</h3><span class="tag">3 Lessons</span></div>
+  <div class="lesson-list">
+    <a class="lesson" href="javascript:;" onclick="showToast('🚧 课程链接待补充')">
+      <span class="l-num">1</span>
+      <div class="l-info">
+        <div class="l-name">定制护肤大势解析，抢占高端护肤红利</div>
+        <div class="l-dur">6月12日 19:00 · 告别盲目跟风与无效内卷，用AI量肤定制重塑你的高客单生意逻辑</div>
+      </div>
+      <span class="l-tag live">直播</span>
+    </a>
+    <a class="lesson" href="javascript:;" onclick="showToast('🚧 课程链接待补充')">
+      <span class="l-num">2</span>
+      <div class="l-info">
+        <div class="l-name">AI智能测肤实战：从读报告到精准开单</div>
+        <div class="l-dur">6月15日 19:00 · 标准化流程教你用专业取代价格，告别经验依赖，轻松拿下精准客户</div>
+      </div>
+      <span class="l-tag live">直播</span>
+    </a>
+    <a class="lesson" href="javascript:;" onclick="showToast('🚧 课程链接待补充')">
+      <span class="l-num">3</span>
+      <div class="l-info">
+        <div class="l-name">四大标准套组：从成交到锁客的高客单打法</div>
+        <div class="l-dur">6月17日 19:00 · 拆解套组搭配逻辑，先标品快速成交、后定制深度锁客，打造持续复购闭环</div>
+      </div>
+      <span class="l-tag live">直播</span>
+    </a>
   </div>
   <div class="ima-bar" style="margin-top:16px" onclick="copyIma()">
     <span class="ib-icon">📚</span><span class="ib-text">所有资料在 ima 知识库</span><span class="ib-btn">复制链接</span>
