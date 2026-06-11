@@ -244,18 +244,18 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
 
   <div class="section"><h3>最新上线</h3><span class="tag">New</span></div>
   <div class="course-list">
-    <a class="course-card zyz" href="javascript:go('zyz')">
+    <a class="course-card zyz" href="javascript:go('zyzbasic')">
       <span class="cc-tag new">NEW</span>
       <div class="cc-ttl">价值锚定 · 臻研志LAB.Y</div>
       <div class="cc-sub">无可替代的10大核心理由 · 音频课</div>
     </a>
-    <a class="course-card zyz" href="javascript:go('zyz')">
+    <a class="course-card zyz" href="javascript:go('zyzbasic')">
       <span class="cc-tag new">NEW</span>
       <div class="cc-ttl">掌握集团背书</div>
       <div class="cc-sub">10分钟讲出公司硬实力 · 音频课</div>
     </a>
     <a class="course-card ys" href="javascript:go('sales')">
-      <span class="cc-tag live">LIVE</span>
+      <span class="cc-tag new">NEW</span>
       <div class="cc-ttl">客户沟通技巧</div>
       <div class="cc-sub">怎么聊才能成交 · 视频课程</div>
     </a>
@@ -338,7 +338,33 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
     <div class="dh-ttl">臻研志系列</div>
     <div class="dh-desc">精研全球植物与科技的功效护肤</div>
   </div>
-  <div class="section" style="padding-top:20px"><h3>基础课程</h3><span class="tag">Basic</span></div>
+
+  <div class="section" style="padding-top:20px"><h3>课程目录</h3><span class="tag">2 Modules</span></div>
+
+  <a class="course-card zyz" href="javascript:go('zyzbasic')" style="margin:0 16px 12px">
+    <span class="cc-tag new">NEW</span>
+    <div class="cc-ttl">基础课程</div>
+    <div class="cc-sub">7 节音频 · 产品知识 · 心态 · 实战技巧</div>
+  </a>
+  <a class="course-card zyz" href="javascript:go('aiskin')" style="margin:0 16px 16px">
+    <span class="cc-tag new">NEW</span>
+    <div class="cc-ttl">高级研修班</div>
+    <div class="cc-sub">3 节直播 · AI量肤定制 · 高客单打法</div>
+  </a>
+</div>
+
+<!-- ========== 臻研志基础课程 ========== -->
+<div class="screen" id="zyzbasic">
+  <div class="nav">
+    <button class="back" onclick="go('zyz')">‹</button>
+    <div class="ttl">基础课程</div>
+  </div>
+  <div class="detail-hero zyz">
+    <div class="dh-tag">Basic Training</div>
+    <div class="dh-ttl">臻研志基础课程</div>
+    <div class="dh-desc">产品知识 · 心态建设 · 实战技巧</div>
+  </div>
+  <div class="section" style="padding-top:20px"><h3>全部课程</h3><span class="tag">7 Lessons</span></div>
   <div class="audio-block">
     <div class="ab-hd">
       <div class="ab-icon">🎧</div>
@@ -357,14 +383,51 @@ body{font-family:var(--font);background:var(--cream);color:var(--text);line-heig
       <source src="audio/02_价值锚定精准匹配臻研志LABY无可替代的10大核心理由.mp3" type="audio/mpeg">
     </audio>
   </div>
-
-  <!-- 高级研修班子入口 -->
-  <div class="section" style="padding-top:24px"><h3>高级研修班</h3><span class="tag">Advanced</span></div>
-  <a class="course-card zyz" href="javascript:go('aiskin')" style="margin:0 16px 16px">
-    <span class="cc-tag new">NEW</span>
-    <div class="cc-ttl">臻研志AI量肤定制高级研修班</div>
-    <div class="cc-sub">3 节直播 · 用AI定制锁客，告别价格战</div>
-  </a>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">选对战场，步步为赢——三倍人生，始于一次果敢 — 汪瀛</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/04_选对战场步步为赢-汪瀛.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">顶级心态的能量管理公式 — 袁思琪</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/05_顶级心态的能量管理公式-袁思琪.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">护巢丸：重新定义女性健康的科学守护 — 杨茜</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/06_护巢丸重新定义女性健康-杨茜.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">借力公司资源——品牌扶持活动的最大化利用指南 — 吴慧</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/07_借力公司资源品牌扶持最大化-吴慧.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="audio-block">
+    <div class="ab-hd">
+      <div class="ab-icon">🎧</div>
+      <div class="ab-title">讲好你的故事：个人创业经历分享，吸引同频伙伴加入 — 吴美辑</div>
+    </div>
+    <audio controls preload="none">
+      <source src="audio/08_讲好你的故事吸引同频伙伴-吴美辑.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
 <!-- ========== AI量肤定制 ========== -->
